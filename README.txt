@@ -1,28 +1,50 @@
-REMIX DEFAULT WORKSPACE
+# 🚀 Booster Token
 
-Remix default workspace is present when:
-i. Remix loads for the very first time 
-ii. A new workspace is created with 'Default' template
-iii. There are no files existing in the File Explorer
+Full-stack dApp — ERC-20 token with hard emission cap and role-based access control.
 
-This workspace contains 3 directories:
+## 🔗 Smart Contract (Sepolia Testnet)
 
-1. 'contracts': Holds three contracts with increasing levels of complexity.
-2. 'scripts': Contains four typescript files to deploy a contract. It is explained below.
-3. 'tests': Contains one Solidity test file for 'Ballot' contract & one JS test file for 'Storage' contract.
+- **Address:** `0x921ae595754734eB0e3a232db5593D8B7334157C`
+- **Etherscan:** [View verified code](https://sepolia.etherscan.io/address/0x921ae595754734eB0e3a232db5593D8B7334157C)
 
-SCRIPTS
+### Features
 
-The 'scripts' folder has four typescript files which help to deploy the 'Storage' contract using 'web3.js' and 'ethers.js' libraries.
+- Mint with absolute supply cap via `totalMinted`
+- Burn
+- Transfer
+- Gasless approvals (ERC20Permit)
+- Role-based access (AccessManaged)
 
-For the deployment of any other contract, just update the contract name from 'Storage' to the desired contract and provide constructor arguments accordingly 
-in the file `deploy_with_ethers.ts` or  `deploy_with_web3.ts`
+### Stack
 
-In the 'tests' folder there is a script containing Mocha-Chai unit tests for 'Storage' contract.
+Solidity • OpenZeppelin v5 • Hardhat
 
-To run a script, right click on file name in the file explorer and click 'Run'. Remember, Solidity file must already be compiled.
-Output from script will appear in remix terminal.
+## 🖥️ Frontend
 
-Please note, require/import is supported in a limited manner for Remix supported modules.
-For now, modules supported by Remix are ethers, web3, swarmgw, chai, multihashes, remix and hardhat only for hardhat.ethers object/plugin.
-For unsupported modules, an error like this will be thrown: '<module_name> module require is not supported by Remix IDE' will be shown.
+React dApp with wallet connection and real-time on-chain event tracking.
+
+### Stack
+
+React • Wagmi v2 • Viem • TanStack Query
+
+### Features
+
+- Connect / Disconnect wallet
+- Dashboard with supply progress bar
+- Mint (authority only) / Transfer / Burn
+- Live transaction history with Etherscan links
+- Toast notifications
+
+## 🏗️ Quick Start
+
+```bash
+# Frontend
+cd frontend
+npm install
+npm run dev
+
+# Smart Contract
+cd contracts
+npm install
+npx hardhat compile
+npx hardhat run scripts/deploy.js --network sepolia
