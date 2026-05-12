@@ -17,7 +17,7 @@ Full-stack dApp — ERC-20 token with hard emission cap and role-based access co
 
 ### Stack
 
-Solidity • OpenZeppelin v5 • Hardhat
+Solidity • OpenZeppelin v5 
 
 ## 🖥️ Frontend
 
